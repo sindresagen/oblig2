@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.12.0.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.12.0.js"></script>
+    <script src="oblig2.js"></script>
+    <script>
+        // model
+        let numbers = [7, 3, 1, 5, 8];
+        let chosenBar; // Variabel for hvilken stolpe som er valgt
+        let inputValue; // Variabel for hva som er skrevet i input-feltet
+
+        show();
+        function show() {
+
+        }
+
+        QUnit.test('velge stolpe, valgt stolpe', function (assert) {
+            selectedBar(1);
+            const actual = chosenBar;
+            const expected = 1;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test('velge stolpe, annen stolpe', function (assert) {
+            selectedBar(3);
+            const actual = chosenBar;
+            const expected = 3;
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test('slette en stolpe', function (assert) {
+            removeBar();
+            
+            assert.equal(actual, expected);
+        });
+
+        QUnit.test('endre en stolpe', function (assert) {
+            assert.equal();
+        });
+
+        QUnit.test('legge til en stolpe', function (assert) {
+            assert.equal();
+        });
+    </script>
+</body>
+
+</html>
