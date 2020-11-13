@@ -26,40 +26,47 @@
 
         QUnit.test('velge stolpe, valgt stolpe', function (assert) {
             selectedBar(1);
-            const actual = chosenBar;
-            const expected = 1;
+            let actual = chosenBar;
+            let expected = 1;
             assert.equal(actual, expected);
         });
 
         QUnit.test('velge stolpe, annen stolpe', function (assert) {
-            selectedBar(3);
-            const actual = chosenBar;
-            const expected = 3;
+            selectedBar(1);
+            selectedBar(2);
+            let actual = chosenBar;
+            let expected = 2;
             assert.equal(actual, expected);
         });
 
         QUnit.test('slette en stolpe', function (assert) {
+            numbers = [3, 4, 2]
+            chosenBar = 2;
             removeBar();
-            const actual = numbers.length;
-            const expected = 4;
-            assert.equal(actual, expected);
+            let actual = numbers;
+            let expected = [3, 2];
+            assert.deepEqual(actual, expected);
         });
 
         QUnit.test('endre en stolpe', function (assert) {
+            numbers = [4, 1, 5];
             chosenBar = 1;
+            inputValue = 8;         
             changeBar();
-            const actual = numbers[chosenBar];
-            const expected = 3;
-            assert.equal(actual, expected);
+            let actual = numbers;
+            let expected = [8, 1, 5];
+            assert.deepEqual(actual, expected);
         });
 
         QUnit.test('legge til en stolpe', function (assert) {
-            addBar();
-            numbers.push(6);
-            const actual = numbers.length;
-            const expected = 6;
-            assert.equal();
+            numbers = [3, 1, 2];
+            inputValue = 7;
+            addBar(inputValue);
+            let actual = numbers;
+            let expected = [3, 1, 2, 7];
+            assert.deepEqual(actual, expected);
         });
+
     </script>
 </body>
 
