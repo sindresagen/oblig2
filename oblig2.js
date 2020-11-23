@@ -10,23 +10,23 @@ function selectedBar(barNo) {
 }
 
 function removeBar() {
-    let barToBeSliced = chosenBar - 1;
-    numbers.splice(barToBeSliced, 1)
+    let barToBeSpliced = chosenBar - 1;
+    numbers.splice(barToBeSpliced, 1)
     show();
 }
 
 function changeBar() {
 
-    if (inputValue > 10) {
+    if (inputValue > 10 && inputValue <= 0) {
         alert('Feil, tallet er ikke mellom 1 og 10.');
-    } else if (inputValue < 10) {
+    } else if (inputValue <= 10) {
         numbers[chosenBar - 1] = parseInt(inputValue);
     }
     show();
 }
 
 function addBar() {
-    if (inputValue >= 10) {
+    if (inputValue > 10) {
         alert('Feil, tallet er ikke mellom 1 og 10.');
         } else if (inputValue <= 10) {
         numbers.push(inputValue);
